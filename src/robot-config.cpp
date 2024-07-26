@@ -91,7 +91,7 @@ int rc_auto_loop_function_Controller1() {
       } else if (!Controller1XBButtonsControlMotorsStopped) {
         DonutWinch.stop();
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
-        Controller1XBButtonsControlMotorsStopped = true;
+        Controller1XBButtonsControlMotorsStopped = false;
         // wings, idk what to call them atm without seeing the robot
       }
       if (Controller1.ButtonR1.pressing())
