@@ -108,7 +108,7 @@ int rc_auto_loop_function_Controller1() {
         sparered.spin(forward);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonDown.pressing()) {
-        sparered.setVelocity(-5700, pct);
+        sparered.setVelocity(-70, pct);
         sparered.spin(reverse);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
