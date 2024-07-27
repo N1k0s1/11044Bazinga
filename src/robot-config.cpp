@@ -85,7 +85,7 @@ int rc_auto_loop_function_Controller1() {
         DonutWinch.spin(forward);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonB.pressing()) {
-        DonutWinch.setVelocity(-70, pct);
+        DonutWinch.setVelocity(70, pct);
         DonutWinch.spin(reverse);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
