@@ -57,7 +57,7 @@ Drivetrain.driveFor(fwd, 700, mm);
 wait(0.1, sec);
 Drivetrain.driveFor(reverse, 600, mm);
 wait(0.1, sec);
-Drivetrain.turnFor(90, deg);
+Drivetrain.turnFor(90000, deg);
 }
 
 /*---------------------------------------------------------------------------*/

@@ -17,8 +17,10 @@ motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
 controller Controller1 = controller(primary);
 motor DonutWinch = motor(PORT5, ratio18_1, false);
-pneumatics wings1 = pneumatics(Brain.ThreeWirePort.A);
-motor sparered = motor(PORT6, ratio36_1, false);
+pneumatics wings1 = pneumatics(Brain.ThreeWirePort.H);
+motor Intake = motor(PORT6, ratio18_1, false);
+
+motor sparered = motor(PORT7, ratio36_1, false);
 
 
 // VEXcode generated functions
@@ -81,11 +83,11 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonX/ButtonB status to control DonutWinch
       if (Controller1.ButtonX.pressing()) {
-        DonutWinch.setVelocity(40, pct);
+        DonutWinch.setVelocity(100, pct);
         DonutWinch.spin(forward);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonB.pressing()) {
-        DonutWinch.setVelocity(40, pct);
+        DonutWinch.setVelocity(100, pct);
         DonutWinch.spin(reverse);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
@@ -115,7 +117,21 @@ int rc_auto_loop_function_Controller1() {
         sparered.stop();
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1UpDownButtonsControlMotorsStopped = true;
+
+      if (Controller1.ButtonL2.pressing()) {
+        Intake.setVelocity(100, pct);
+        Intake.spin(forward);
+        Controller1XBButtonsControlMotorsStopped = false;
+      } else if (Controller1.ButtonL1.pressing()) {
+        Intake.setVelocity(100, pct);
+        Intake.spin(reverse);
+        Controller1XBButtonsControlMotorsStopped = false;
+      } else if (!Controller1XBButtonsControlMotorsStopped) {
+        Intake.stop();
+        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+        Controller1UpDownButtonsControlMotorsStopped = true;
       }
+    }
     }
     // wait before repeating the process
     wait(20, msec);
