@@ -121,10 +121,14 @@ int rc_auto_loop_function_Controller1() {
       if (Controller1.ButtonL2.pressing()) {
         Intake.setVelocity(100, pct);
         Intake.spin(forward);
+        DonutWinch.setVelocity(100, pct);
+        DonutWinch.spin(forward);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonL1.pressing()) {
         Intake.setVelocity(100, pct);
         Intake.spin(reverse);
+        DonutWinch.setVelocity(100, pct);
+        DonutWinch.spin(reverse);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (!Controller1XBButtonsControlMotorsStopped) {
         Intake.stop();
