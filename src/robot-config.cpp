@@ -119,13 +119,13 @@ int rc_auto_loop_function_Controller1() {
         Controller1UpDownButtonsControlMotorsStopped = true;
 
       if (Controller1.ButtonL2.pressing()) {
-        Intake.setVelocity(100, pct);
+        Intake.setVelocity(-100, pct);
         Intake.spin(forward);
         DonutWinch.setVelocity(100, pct);
         DonutWinch.spin(forward);
         Controller1XBButtonsControlMotorsStopped = false;
       } else if (Controller1.ButtonL1.pressing()) {
-        Intake.setVelocity(100, pct);
+        Intake.setVelocity(-100, pct);
         Intake.spin(reverse);
         DonutWinch.setVelocity(100, pct);
         DonutWinch.spin(reverse);
