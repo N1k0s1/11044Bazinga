@@ -1,4 +1,5 @@
-`**11044B Code for 2024/2025 (High Stakes)**`  
+`**11044B Code for 2024/2025 (High Stakes)**` 
+This is the code for the 2024/2025 Vex Robotics Season, and will be revised as the season goes on.
 **Port**  
 Drivetrain, *Green Motors* - 1/2 *Left* 3/4 *Right*  
 Intake, *Green Motors* - 5  
