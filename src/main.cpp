@@ -54,10 +54,12 @@ void pre_auton(void) {
 void autonomous(void) {
 Drivetrain.setDriveVelocity(1000, pct);
 Drivetrain.driveFor(fwd, 700, mm);
+wings1.close();
+wait(0.1, sec);
+DonutWinch.setVelocity(50, pct);
+DonutWinch.driveFor(fwd, 400, mm)
 wait(0.1, sec);
 Drivetrain.driveFor(reverse, 600, mm);
-wait(0.1, sec);
-Drivetrain.turnFor(90000, deg);
 }
 
 /*---------------------------------------------------------------------------*/
